@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe Calorie Calculator - CookWise</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+           
+              <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+    
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto"">
+    
+                  <li class="nav-item">
+                    <a class="nav-link"  href="index.html">Home</a>
+                  </li>
+    
+                  <li class="nav-item">
+                    <a class="nav-link" href="calculator.html" target="_blank">Calorie Calculator</a>
+    
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Review</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+    
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Get Started
+                    </a>
+                
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="Userinfo.html">Register</a></li>
+                      <li><a class="dropdown-item" href="Userinfo.html">Login</a></li>
+                    </ul>
+                  </li>
+                </ul>
+            </div>
+          </nav>
+    </section>   
+
+    <div class="userinfopage">
+        <section id="container" class="container mt-5">
+            <div id="tabs" class="text-center mb-4">
+                <p id="lt" class="tabs" onclick="loginTabFun()"></p>
+                <p id="rt" class="tabs" onclick="regTabFun()"></p>
+            </div>
+
+            <div id="cont" class="row">
+                <div id="login" class="col-md-6 comm">
+                    <h3>Sign in</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="se" class="form-label">Email</label>
+                            <input id="se" type="email" class="form-control" placeholder="Email" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sp" class="form-label">Password</label>
+                            <input id="sp" type="password" class="form-control" placeholder="Password" required/>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="login()">Submit</button>
+                        <p onclick="forTabFun()">Forget Password?</p>  </div>
+                    </form>
+              
+                <div id="register" class="col-md-6 comm"> <!-- Initially hidden -->
+                  <h3>Register</h3>
+                  <form>
+                      <div class="mb-3">
+                          <label for="re" class="form-label">Email</label>
+                          <input id="re" type="email" class="form-control" placeholder="Email" required/>
+                      </div>
+                      <div class="mb-3">
+                          <label for="rp" class="form-label">Password</label>
+                          <input id="rp" type="password" class="form-control" placeholder="Password" required/>
+                      </div>
+                      <div class="mb-3">
+                          <label for="rrp" class="form-label">Re-type Password</label>
+                          <input id="rrp" type="password" class="form-control" placeholder="Re-type Password" required/>
+                      </div>
+                      <button type="button" class="btn btn-primary" onclick="register()">Submit</button> <!-- Register button -->
+                  </form>
+              </div>
+              
+            </div>
+        </section>
+    </section>
+    <script src="Userinfo.js"></script>
+</body>
+</html>
