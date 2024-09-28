@@ -1,6 +1,6 @@
 # **CookWise Recipe Website**
 
-![CookWise Screenshot](Screen Shot 2024-09-27 at 11.31.59 am.png)
+![CookWise Screenshot](screenshot/webpage.png)
 
 ## **Description**
 
