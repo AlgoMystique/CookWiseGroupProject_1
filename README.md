@@ -1,6 +1,6 @@
 # **CookWise Recipe Website**
 
-![screenshot](link_to_your_screenshot_image)
+![CookWise Screenshot](screenshot/webpage.png)
 
 ## **Description**
 
@@ -27,7 +27,6 @@ This project was developed as part of the USYD Coding Bootcamp Project 1: Intera
 - **Interactive UI:** User-friendly interface with responsive design.
 - **Favorites:** Save your favorite recipes for easy access.
 
-## **Usage**
 
 ## **Usage**
 
