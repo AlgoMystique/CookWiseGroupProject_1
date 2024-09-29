@@ -84,6 +84,36 @@
   </div>
 </section>
 
+<!-- Filters for dietary preferences -->
+<div class="container">
+  <div class="row justify-content-center">
+      <!-- Diet Filter Dropdown -->
+      <div class="col-12 col-md-6 text-center mb-3">
+          <label for="diet-select" class="form-label">Diet Type:</label>
+          <select id="diet-select" class="form-select">
+              <option value="">Any</option>
+              <option value="balanced">Balanced</option>
+              <option value="high-protein">High Protein</option>
+              <option value="low-carb">Low Carb</option>
+              <option value="vegan">Vegan</option>
+              <option value="vegetarian">Vegetarian</option>
+          </select>
+      </div>
+      
+      <!-- Health Filter Dropdown -->
+      <div class="col-12 col-md-6 text-center mb-3">
+          <label for="health-select" class="form-label">Health Labels:</label>
+          <select id="health-select" class="form-select">
+              <option value="">Any</option>
+              <option value="gluten-free">Gluten-Free</option>
+              <option value="dairy-free">Dairy-Free</option>
+              <option value="peanut-free">Peanut-Free</option>
+              <option value="tree-nut-free">Tree Nut-Free</option>
+          </select>
+      </div>
+  </div>
+</div>
+
 <!-- REVIEW SECTION -->
 <section id="testimonials">
   <div class="container">
@@ -121,7 +151,6 @@
     
   </div>
  </section>
-<!---footer section-->
 <!-- Footer Section -->
 <section id="footer">
   <img src="images/wave2.png" class="footer-img">
@@ -151,7 +180,7 @@
 <hr>
 <p class="copyright">Website Crafted by Students at USYD Bootcamp</p>
 
-<script src="script.js"></script>
+<script src="script-api.js"></script>
 <script>
   // JavaScript to switch the still image to a GIF on click
   document.getElementById('owl-image').addEventListener('click', function() {
