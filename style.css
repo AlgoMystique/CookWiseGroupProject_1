@@ -309,3 +309,21 @@ hr {
     margin: -50px 0; 
 }
 
+/* Recipe cards styling */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 2px solid #50ece5; 
+}
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center; 
+}
+
+/* Responsive layout for the cards */
+@media (max-width: 768px) {
+    .card {
+        max-width: 100%; 
+    }
+}

@@ -1,6 +1,6 @@
 //Api key 
-const apiID = 'API_ID';  
-const apiKey = 'API_KEY';  
+const apiID = 'ad44f422';  
+const apiKey = 'ca3bff17dad4b97a41e0ee57887fd79d';  
 
 
 // JavaScript Code (Fetching from Edamam API, saving favorites, etc.)
