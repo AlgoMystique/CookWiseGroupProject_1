@@ -257,7 +257,7 @@ hr {
 
 
 /*User info page */
-/* User info page */
+
 .userinfopage {
     background-image: linear-gradient(to right, #ffffff, #91eff0);
 }
@@ -305,7 +305,7 @@ hr {
 
 #tabs {
     display: flex; 
-    justify-content: center; /* Center tabs horizontally */
+    justify-content: center; 
     margin: -50px 0; 
 }
 
@@ -326,4 +326,8 @@ hr {
     .card {
         max-width: 100%; 
     }
+}
+
+.container {
+    background-image: linear-gradient(to right, #ffffff, #91eff0);
 }
