@@ -1,99 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Recipe Calorie Calculator - CookWise</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Login and Register Modal</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <section id="nav-bar">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-           
-              <a class="navbar-brand" href="#"><img src="./assets/images/logo.png"></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-    
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-    
-                  <li class="nav-item">
-                    <a class="nav-link"  href="index.html">Home</a>
-                  </li>
-    
-                  <li class="nav-item">
-                    <a class="nav-link" href="calculator.html" target="_blank">Calorie Calculator</a>
-    
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.html">Review</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                  </li>
-    
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Get Started
-                    </a>
-                
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="Userinfo.html">Register</a></li>
-                      <li><a class="dropdown-item" href="Userinfo.html">Login</a></li>
-                    </ul>
-                  </li>
-                </ul>
-            </div>
-          </nav>
-    </section>   
 
-    <div class="userinfopage">
-        <section id="container" class="container mt-5">
-            <div id="tabs" class="text-center mb-4">
-                <p id="lt" class="tabs" onclick="loginTabFun()"></p>
-                <p id="rt" class="tabs" onclick="regTabFun()"></p>
+<body class="userinfo-page">
+  
+    <div class="container text-center" style="margin-top: 20px;">
+      <div class="row justify-content-center align-items-center">
+          <div class="col-auto">
+              <img src="./assets/images/userinfo.png" alt="Descriptive Alt Text" class="img-fluid" style="max-width: 100%; max-height: 450px; height: auto;">
+          </div>
+       
+      </div>
+  </div>
+  
+  <!-- Button for modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#authModal">
+    Login / Register
+  </button>
+
+  <!-- Login and Register form -->
+  <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="authModalLabel">Login / Register</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         
+          <ul class="nav nav-tabs" id="authTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
+            </li>
+          </ul>
+
+      
+          <div class="tab-content" id="authTabContent">
+            <!-- Login Form -->
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+              <form class="mt-3">
+                <div class="form-group">
+                  <label for="loginEmail">Email address</label>
+                  <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                  <label for="loginPassword">Password</label>
+                  <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="loginRememberMe">
+                  <label class="form-check-label" for="loginRememberMe">Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+              </form>
+              <div id="loginConfirmation" class="mt-2"></div> <!-- Confirmation message for Login -->
+            </div>
             </div>
 
-            <div id="cont" class="row">
-                <div id="login" class="col-md-6 comm">
-                    <h3>Sign in</h3>
-                    <form>
-                        <div class="mb-3">
-                            <label for="se" class="form-label">Email</label>
-                            <input id="se" type="email" class="form-control" placeholder="Email" required/>
-                        </div>
-                        <div class="mb-3">
-                            <label for="sp" class="form-label">Password</label>
-                            <input id="sp" type="password" class="form-control" placeholder="Password" required/>
-                        </div>
-                        <button type="button" class="btn btn-primary" onclick="login()">Submit</button>
-                        <p onclick="forTabFun()">Forget Password?</p>  </div>
-                    </form>
-              
-                <div id="register" class="col-md-6 comm"> <!-- Initially hidden -->
-                  <h3>Register</h3>
-                  <form>
-                      <div class="mb-3">
-                          <label for="re" class="form-label">Email</label>
-                          <input id="re" type="email" class="form-control" placeholder="Email" required/>
-                      </div>
-                      <div class="mb-3">
-                          <label for="rp" class="form-label">Password</label>
-                          <input id="rp" type="password" class="form-control" placeholder="Password" required/>
-                      </div>
-                      <div class="mb-3">
-                          <label for="rrp" class="form-label">Re-type Password</label>
-                          <input id="rrp" type="password" class="form-control" placeholder="Re-type Password" required/>
-                      </div>
-                      <button type="button" class="btn btn-primary" onclick="register()">Submit</button> <!-- Register button -->
-                  </form>
-              </div>
-              
+            <!-- Register Form -->
+            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+              <form class="mt-3">
+                <div class="form-group">
+                  <label for="registerEmail">Email address</label>
+                  <input type="email" class="form-control" id="registerEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                  <label for="registerPassword">Password</label>
+                  <input type="password" class="form-control" id="registerPassword" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                  <label for="registerConfirmPassword">Confirm Password</label>
+                  <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="btn btn-success">Register</button>
+              </form>
+              <div id="registerConfirmation" class="mt-2"></div> <!-- Confirmation message for Registration -->
+  </div>
             </div>
-        </section>
-    </section>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+ 
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script src="./assets/js/Userinfo.js"></script>
 </body>
 </html>

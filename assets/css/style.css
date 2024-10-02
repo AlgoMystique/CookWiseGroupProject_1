@@ -133,8 +133,7 @@ padding-bottom: 20px;
 /*-- social media section*/
 
 #social-media{
-    background-color: #ffffff;
-    padding: 100px 0;
+    background-image: linear-gradient(to right, #ffffff, #91eff0);
 }
 #social-media p {
     font-size: 25px;

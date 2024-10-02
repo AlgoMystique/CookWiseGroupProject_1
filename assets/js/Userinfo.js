@@ -1,53 +1,45 @@
-// Function to switch to the login tab
-function loginTabFun() {
-    document.getElementById('login').style.display = 'block'; // Show login form
-    document.getElementById('register').style.display = 'none'; // Hide register form
-    document.getElementById('lt').textContent = 'Login'; // Set left tab text
-    document.getElementById('rt').textContent = 'Register'; // Set right tab text
-}
 
-// Function to switch to the registration tab
-function regTabFun() {
-    document.getElementById('login').style.display = 'none'; // Hide login form
-    document.getElementById('register').style.display = 'block'; // Show register form
-    document.getElementById('lt').textContent = 'Login'; // Set left tab text
-    document.getElementById('rt').textContent = 'Register'; // Set right tab text
-}
+  // Function to handle form submission for Login
+  function handleLogin(event) {
+    event.preventDefault(); // Prevent default form submission
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    const confirmationDiv = document.getElementById('loginConfirmation');
 
-// Function to handle login
-function login() {
-    const email = document.getElementById('se').value;
-    const password = document.getElementById('sp').value;
-
-    // Simple validation (replace with real authentication logic)
+    // Check if fields are filled
     if (email && password) {
-        alert(`Logged in successfully! Welcome, ${email}`);
-        // Here you can add logic to redirect or perform further actions
+      confirmationDiv.textContent = `Login successful! Welcome back, ${email}.`;
+      confirmationDiv.className = 'text-success'; // Add success class
     } else {
-        alert('Please enter valid credentials.');
+      confirmationDiv.textContent = 'Please fill in all fields.';
+      confirmationDiv.className = 'text-danger'; // Add error class
     }
-}
+  }
 
-// Function to handle registration
-function register() {
-    const email = document.getElementById('re').value;
-    const password = document.getElementById('rp').value;
-    const confirmPassword = document.getElementById('rrp').value;
+  // Function to handle form submission for Registration
+  function handleRegister(event) {
+    event.preventDefault(); // Prevent default form submission
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
+    const confirmPassword = document.getElementById('registerConfirmPassword').value;
+    const confirmationDiv = document.getElementById('registerConfirmation');
 
-    // Simple validation (replace with real registration logic)
+    // Check if fields are filled and if passwords match
     if (email && password && confirmPassword) {
-        if (password === confirmPassword) {
-            alert(`Registration successful! Welcome, ${email}`);
-            // Here you can add logic to redirect or perform further actions
-        } else {
-            alert('Passwords do not match. Please try again.');
-        }
+      if (password === confirmPassword) {
+        confirmationDiv.textContent = `Registration successful! Welcome, ${email}.`;
+        confirmationDiv.className = 'text-success'; // Add success class
+      } else {
+        confirmationDiv.textContent = 'Passwords do not match. Please try again.';
+        confirmationDiv.className = 'text-danger'; // Add error class
+      }
     } else {
-        alert('Please fill in all fields.');
+      confirmationDiv.textContent = 'Please fill in all fields.';
+      confirmationDiv.className = 'text-danger'; // Add error class
     }
-}
+  }
 
-// Function to handle forgot password (optional)
-function forTabFun() {
-    alert('Forgot password functionality can be implemented here.');
-}
+  // Event listeners for form submissions
+  document.getElementById('login').querySelector('form').addEventListener('submit', handleLogin);
+  document.getElementById('register').querySelector('form').addEventListener('submit', handleRegister);
+
