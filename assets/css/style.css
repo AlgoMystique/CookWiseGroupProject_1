@@ -95,13 +95,33 @@ body{
     border: none;
     height: 50px;
     width: 120px;
-    background-image: linear-gradient(180deg,rgb(52, 185, 226),rgb(5, 116, 131));
-    color: #ffffff;
+    background-image: linear-gradient(to right, #fff,#91eff0 );
+    color: #000000;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.25);
   }
+  #saved-recipes-section {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    justify-content: center;  
+    height: 20vh;           
+    text-align: center;      
+}
+
+#saved-recipes-section .btn {
+    box-shadow: none;
+    color: black;
+    padding: 8px 25px;
+    border: none;
+    margin-top: 35px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #f60000, #ffffff);
+}
+
+
   #results {
     display: flex;
     justify-content: left;
@@ -304,10 +324,9 @@ hr {
 }
 
 
-/*User info page */
-/* User info page */
 
-.userinfopage {
+/* User info page */
+#userinfopage {
     background-image: linear-gradient(to right, #ffffff, #91eff0);
     padding: 20px;
     height: 100vh; 
