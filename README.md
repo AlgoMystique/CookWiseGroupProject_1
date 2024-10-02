@@ -1,6 +1,6 @@
 # **CookWise Recipe Website**
 
-![CookWise Screenshot](screenshot/screenshot.png)
+![CookWise Screenshot](./assets/screenshot/screenshot.png)
 
 ## **Description**
 
