@@ -43,8 +43,7 @@ This project was developed as part of the USYD Coding Bootcamp Project 1: Intera
 
 ### Live-Demo:
 
-[View a live demo here](https://algomystique.github.io/CookWiseGroupProject_1)
-
+[View a live demo here][(https://algomystique.github.io/CookWiseGroupProject_1)]
 ## **License:**
 This project is licensed under the MIT License - see the LICENSE file for details.
 
