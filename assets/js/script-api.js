@@ -1,132 +1,106 @@
-//Api key 
-const apiID = 'ad44f422';  
-const apiKey = 'ca3bff17dad4b97a41e0ee57887fd79d';  
+const apiKey = '80e1f64871fd44bfa8661d5a3c6e6f7d';  // Replace with your API key
 
+// Function to search for recipes from Spoonacular API
+async function searchRecipes() {
+    const searchQuery = document.getElementById('query').value;
+    try {
+        const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchQuery}`);
+        const data = await response.json();
+        const recipeList = document.getElementById('results');
+        recipeList.innerHTML = '';  // Clear previous results
 
-// JavaScript Code (Fetching from Edamam API, saving favorites, etc.)
+        if (data.results.length === 0) {
+            recipeList.innerHTML = '<p>No recipes found.</p>';
+        } else {
+            data.results.forEach(recipe => {
+                const recipeItem = document.createElement('div');
+                recipeItem.className = 'recipe-item card p-3 mb-3';
 
-// Search form event listener
-document.getElementById('recipe-search-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const ingredients = document.getElementById('ingredient-input').value;
-    if (ingredients) {
-        fetchRecipes(ingredients);
+                const recipeTitle = document.createElement('h3');
+                recipeTitle.className = 'card-title';
+                recipeTitle.textContent = recipe.title;
+
+                const recipeImage = document.createElement('img');
+                recipeImage.src = recipe.image;
+                recipeImage.alt = recipe.title;
+                recipeImage.className = 'card-img-top';
+
+                const recipeLink = document.createElement('button');
+                recipeLink.className = 'btn btn-primary mt-3';
+                recipeLink.textContent = 'View Recipe';
+                recipeLink.onclick = async function () {
+                    await showRecipeDetails(recipe.id);
+                };
+
+                const saveButton = document.createElement('button');
+                saveButton.textContent = 'Save Recipe';
+                saveButton.className = 'btn btn-secondary mt-2';
+                saveButton.onclick = function () {
+                    saveRecipeToLocalStorage(recipe.id, recipe.title, recipe.image);
+                };
+
+                recipeItem.appendChild(recipeImage);
+                recipeItem.appendChild(recipeTitle);
+                recipeItem.appendChild(recipeLink);
+                recipeItem.appendChild(saveButton);
+
+                recipeList.appendChild(recipeItem);
+            });
+        }
+    } catch (error) {
+        console.error('Error fetching recipes:', error);
     }
-});
-
-
-// Fetch recipes from Edamam API with filters
-function fetchRecipes(ingredients) {
-    const diet = document.getElementById('diet-select').value;
-    const health = document.getElementById('health-select').value;
-
-    let apiUrl = `https://api.edamam.com/search?q=${ingredients}&app_id=${apiID}&app_key=${apiKey}&from=0&to=12`;
-
-    // Add diet and health filters if selected
-    if (diet) {
-        apiUrl += `&diet=${diet}`;
-    }
-    if (health) {
-        apiUrl += `&health=${health}`;
-    }
-
-    fetch(apiUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            displayRecipes(data.hits);
-        })
-        .catch(error => {
-            console.error('Error fetching recipes:', error);
-            alert(`Failed to fetch recipes: ${error.message}`);
-        });
 }
 
-// Display recipes
-function displayRecipes(recipes) {
-    const recipeResults = document.getElementById('recipe-results');
-    recipeResults.innerHTML = '';  // Clear previous results
-
-    recipes.forEach(recipeData => {
-        const recipe = recipeData.recipe;
-        const recipeCard = document.createElement('div');
-        recipeCard.classList.add('col-md-4', 'mb-4');
-
-        recipeCard.innerHTML = `
-            <div class="card">
-                <img src="${recipe.image}" class="card-img-top" alt="${recipe.label}">
-                <div class="card-body">
-                    <h5 class="card-title">${recipe.label}</h5>
-                    <button class="btn btn-primary" onclick="viewRecipeDetails('${recipe.uri}')">View Recipe</button>
-                    <button class="btn btn-secondary" onclick="saveFavoriteRecipe('${recipe.label}', '${recipe.url}')">Save to Favorites</button>
-                </div>
-            </div>
-        `;
-
-        recipeResults.appendChild(recipeCard);
-    });
+// Function to show recipe details in a modal
+function showRecipeDetails(recipeId) {
+    // Redirect to recipe-detail.html and pass the recipe ID as a URL parameter
+    window.location.href = `recipe-detail.html?id=${recipeId}`;
+    
 }
 
-
-// Save favorite recipe to local storage
-function saveFavoriteRecipe(label, url) {
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    const favoriteRecipe = { label, url };
-
-    // Check if the recipe is already saved
-    if (favorites.some(recipe => recipe.label === label)) {
-        alert('Recipe already saved to favorites!');
+// Save recipe to local storage
+function saveRecipeToLocalStorage(recipeId, recipeTitle, recipeImage) {
+    const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+    
+    const recipeExists = savedRecipes.find(recipe => recipe.id === recipeId);
+    if (recipeExists) {
+        alert('Recipe already saved!');
         return;
     }
 
-    favorites.push(favoriteRecipe);
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    alert('Recipe saved to favorites!');
+    const recipe = { id: recipeId, title: recipeTitle, image: recipeImage };
+    savedRecipes.push(recipe);
+    localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+
+    alert('Recipe saved!');
 }
 
-// Retrieve and display favorite recipes 
-function displayFavoriteRecipes() {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    const favoriteList = document.getElementById('favorite-recipes');
+// Display saved recipes from local storage
+function displaySavedRecipes() {
+    const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+    const savedRecipesDiv = document.getElementById('saved-recipes');
+    savedRecipesDiv.innerHTML = '';  // Clear previous content
 
-    if (favorites.length === 0) {
-        favoriteList.innerHTML = '<p>No favorite recipes saved yet.</p>';
+    if (savedRecipes.length === 0) {
+        savedRecipesDiv.innerHTML = '<p>No saved recipes.</p>';
     } else {
-        favorites.forEach(recipe => {
-            favoriteList.innerHTML += `<p><a href="${recipe.url}" target="_blank">${recipe.label}</a></p>`;
+        savedRecipes.forEach(recipe => {
+            const recipeItem = document.createElement('div');
+            recipeItem.className = 'recipe-item card p-3 mb-3';
+
+            const recipeTitle = document.createElement('h3');
+            recipeTitle.className = 'card-title';
+            recipeTitle.textContent = recipe.title;
+
+            const recipeImage = document.createElement('img');
+            recipeImage.src = recipe.image;
+            recipeImage.alt = recipe.title;
+            recipeImage.className = 'card-img-top';
+
+            recipeItem.appendChild(recipeImage);
+            recipeItem.appendChild(recipeTitle);
+            savedRecipesDiv.appendChild(recipeItem);
         });
     }
-}
-
-function displayRecipes(recipes) {
-    const recipeResults = document.getElementById('recipe-results');
-    recipeResults.innerHTML = '';  // Clear previous results
-
-    recipes.forEach(recipeData => {
-        const recipe = recipeData.recipe;
-        const recipeCard = document.createElement('div');
-        recipeCard.classList.add('col', 's12', 'm6', 'l4');
-
-        recipeCard.innerHTML = `
-            <div class="card">
-                <div class="card-image">
-                    <img src="${recipe.image}" alt="${recipe.label}">
-                    <span class="card-title">${recipe.label}</span>
-                </div>
-                <div class="card-content">
-                    <p>${recipe.label}</p>
-                </div>
-                <div class="card-action">
-                    <a href="#" class="btn blue lighten-1" onclick="viewRecipeDetails('${recipe.uri}')">View Details</a>
-                    <a href="#" class="btn green lighten-1" onclick="saveFavoriteRecipe('${recipe.label}', '${recipe.url}')">Save</a>
-                </div>
-            </div>
-        `;
-
-        recipeResults.appendChild(recipeCard);
-    });
 }
