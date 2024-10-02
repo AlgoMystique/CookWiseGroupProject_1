@@ -17,7 +17,7 @@ This project was developed as part of the USYD Coding Bootcamp Project 1: Intera
   - Bootstrap
 
 - **Backend/API:**
-  - [Edamam API](https://developer.edamam.com/)
+  - Recipe Finder API
     
 - **Version Control:**
   - Git
