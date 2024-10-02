@@ -27,7 +27,7 @@ This project was developed as part of the USYD Coding Bootcamp Project 1: Intera
 - **Calorie-Conscious Recipes:** Filter recipes based on your calorie intake goals.
 - **Healthy Diet Options:** Find recipes that align with your health and dietary preferences.
 - **Interactive UI:** User-friendly interface with responsive design.
-- **Fun Feature:** The Guitar Owl 🎸To add a bit of entertainment, we've included a charming owl next to the review section. Click on the owl, and watch it play guitar in a delightful GIF! We hope this little feature brings a smile to your day while you share your feedback with us!
+- **Fun Feature:** "The WiseOwl Guitarist🎸" , to add a bit of entertainment, we've included a charming owl next to the review section. Click on the owl, and watch it play guitar in a delightful GIF! We hope this little feature brings a smile to your day while you share your feedback with us!
 
  
 ## **Usage:**
