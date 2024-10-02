@@ -44,3 +44,8 @@ This project was developed as part of the USYD Coding Bootcamp Project 1: Intera
 
 ## **License**
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute, please fork the repository and create a pull request. 
+For any suggestions or feedback, feel free to open an issue.
