@@ -5,8 +5,7 @@
 ![CookWise Screenshot](./assets/screenshot/shot2.png)
 ![CookWise Screenshot](./assets/screenshot/shot3.png)
 
-
-## **Description:**
+**Description:**
 
 **CookWise** is a smart recipe-finding application designed to help users discover the perfect dish based on the ingredients they have at home and their dietary preferences. Whether you're looking to use up ingredients, find recipes that fit your calorie intake, or maintain a healthy diet, CookWise has you covered. By simply entering the ingredients and setting your calorie goals, CookWise provides a variety of recipe options that are quick, easy, and nutritious. The goal of this application is to minimize food waste, help users maintain a healthy diet, and make cooking at home more enjoyable.
 
@@ -44,6 +43,10 @@ This project was developed as part of the USYD Coding Bootcamp Project 1: Intera
 5. Click on the "Calorie Calculator" in the navigation bar to access the calorie calculator page.
 6. Click on "Get Started" to register or log in to your account.
 7. Click on "Contact Me" in the navigation bar to fill out the contact form on another page.
+
+### Live-Demo:
+
+[View a live demo here](https://algomystique.github.io/MusicPlayer)
 
 ## **License:**
 This project is licensed under the MIT License - see the LICENSE file for details.
