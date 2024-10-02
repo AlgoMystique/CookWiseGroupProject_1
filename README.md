@@ -1,6 +1,8 @@
 # **CookWise Recipe Website**
 
 ![CookWise Screenshot](./assets/screenshot/shot0.png)
+![CookWise Screenshot](./assets/screenshot/shot1.png)
+![CookWise Screenshot](./assets/screenshot/shot2.png)
 ![CookWise Screenshot](./assets/screenshot/shot3.png)
 
 **CookWise** is a smart recipe-finding application designed to help users discover the perfect dish based on the ingredients they have at home and their dietary preferences. Whether you're looking to use up ingredients, find recipes that fit your calorie intake, or maintain a healthy diet, CookWise has you covered. By simply entering the ingredients and setting your calorie goals, CookWise provides a variety of recipe options that are quick, easy, and nutritious. The goal of this application is to minimize food waste, help users maintain a healthy diet, and make cooking at home more enjoyable.
