@@ -20,9 +20,12 @@ This project was developed as part of the USYD Coding Bootcamp Project 1: Intera
   - JavaScript
   - Bootstrap
 
-- **Other:**
+- **Backend/API:**
+  - [Edamam API](https://developer.edamam.com/)
+    
+- **Version Control:**
   - Git
-
+    
 ## **Features**
 
 - **Ingredient-based Recipe Search:** Enter ingredients to get a list of recipes you can make.
