@@ -6,13 +6,13 @@
 ![CookWise Screenshot](./assets/screenshot/shot3.png)
 
 
-## **Description**
+## **Description:**
 
 **CookWise** is a smart recipe-finding application designed to help users discover the perfect dish based on the ingredients they have at home and their dietary preferences. Whether you're looking to use up ingredients, find recipes that fit your calorie intake, or maintain a healthy diet, CookWise has you covered. By simply entering the ingredients and setting your calorie goals, CookWise provides a variety of recipe options that are quick, easy, and nutritious. The goal of this application is to minimize food waste, help users maintain a healthy diet, and make cooking at home more enjoyable.
 
 This project was developed as part of the USYD Coding Bootcamp Project 1: Interactive Front-End Application.
 
-## **Technologies Used**
+## **Technologies Used:**
 
 - **Frontend:**
   - HTML5
@@ -26,7 +26,7 @@ This project was developed as part of the USYD Coding Bootcamp Project 1: Intera
 - **Version Control:**
   - Git
     
-## **Features**
+## **Features:**
 
 - **Ingredient-based Recipe Search:** Enter ingredients to get a list of recipes you can make.
 - **Calorie-Conscious Recipes:** Filter recipes based on your calorie intake goals.
@@ -35,7 +35,7 @@ This project was developed as part of the USYD Coding Bootcamp Project 1: Intera
 - **Favorites:** Save your favorite recipes for easy access.
 
 
-## **Usage**
+## **Usage:**
 
 1. Visit the CookWise webpage.
 2. Use the search bar to look up recipes based on the ingredients you have.
@@ -45,10 +45,10 @@ This project was developed as part of the USYD Coding Bootcamp Project 1: Intera
 6. Click on "Get Started" to register or log in to your account.
 7. Click on "Contact Me" in the navigation bar to fill out the contact form on another page.
 
-## **License**
+## **License:**
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Contributing
+## Contributing:
 
 Contributions are welcome! If you'd like to contribute, please fork the repository and create a pull request. 
 For any suggestions or feedback, feel free to open an issue.
