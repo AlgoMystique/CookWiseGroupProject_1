@@ -30,7 +30,12 @@ This project was developed as part of the USYD Coding Bootcamp Project 1: Intera
 - **Interactive UI:** User-friendly interface with responsive design.
 - **Fun Feature:** "The WiseOwl Guitarist🎸"! To add a bit of entertainment, we've included a charming owl next to the review section. Click on the owl, and watch it play guitar in a delightful GIF! We hope this little feature brings a smile to your day while you share your feedback with us!
 
- 
+ ## Design
+
+- **Color Scheme**: The gradient color scheme is inspired by [CSS Gradient](https://cssgradient.io), providing a visually appealing and contemporary look. The colors are carefully chosen to evoke a sense of warmth and creativity, reflecting the essence of healthy eating and cooking.
+
+- **Imagery**:Custom graphics, including the logo and GIFs created in [Canva](https://www.canva.com), enhance the visual appeal and help convey the brand identity.
+
 ## **Usage:**
 
 1. Visit the CookWise webpage.
